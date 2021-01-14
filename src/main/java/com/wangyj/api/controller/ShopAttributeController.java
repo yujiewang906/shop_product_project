@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.xml.transform.Result;
+import java.util.Map;
+
 
 @RestController
 @RequestMapping("api/attribute")
@@ -29,9 +30,9 @@ public class ShopAttributeController {
             return ResultData.error(500,"非法请求");
         }
 
-        shopAttributeService.getData(vo);
+        Map data = shopAttributeService.getData(vo);
 
-        return ResultData.success(null);
+        return ResultData.success(data);
     }
 
 
