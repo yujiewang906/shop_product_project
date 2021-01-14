@@ -70,6 +70,20 @@ public class ShopAttributeController {
         return  ResultData.success(null);
     }
 
+    /*
+     * 路径：http://192.168.1.223:8080/api/attribute/deleteAttribute
+     * 参数：id:必传
+     *  逻辑删除  isDel=1为不展示
+     *返回值：data,code,message
+     *请求方式：delete
+     *
+     * */
+    @DeleteMapping("deleteAttribute")
+    public ResultData  deleteAttribute(Integer id){
 
+        shopAttributeService.deleteAttribute(id);
+
+        return ResultData.success(null);
+    }
 }
 

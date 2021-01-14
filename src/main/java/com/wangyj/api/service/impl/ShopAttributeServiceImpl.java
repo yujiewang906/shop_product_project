@@ -42,4 +42,9 @@ public class ShopAttributeServiceImpl implements ShopAttributeService {
 
         shopAttributeDao.updateAttribute(shopAttribute);
     }
+
+    @Override
+    public void deleteAttribute(Integer id) {
+        shopAttributeDao.deleteAttribute(id);
+    }
 }
