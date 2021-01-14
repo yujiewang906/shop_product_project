@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wangyj.api.dao.ShopBrandDao">
+
+
+    <select id="queryData" resultType="com.wangyj.api.model.po.ShopBrand" parameterType="com.wangyj.api.model.vo.ShopParamsVo">
+
+        SELECT  *  FROM  shop_brand WHERE 1=1
+        <if test="name != null and name != &quot;&quot;">
+            and name = #{name}
+        </if>
+        limit ${currPage*(page-1)},#{currPage}
+    </select>
+
+    <select id="queryCountBrand" resultType="java.lang.Integer" parameterType="com.wangyj.api.model.vo.ShopParamsVo">
+        select count(*) from shop_brand where 1=1
+        <if test="name != null and name != &quot;&quot;">
+            and name = #{name}
+        </if>
+    </select>
+
+
+
+
+    <insert id="addBrand" parameterType="com.wangyj.api.model.po.ShopBrand">
+        insert into shop_brand  (name,bandE,imgpath,bandDesc,ord,isDel,createDate,updateDate,author) values (#{name},#{bandE},
+         #{imgpath},#{bandDesc},#{ord},0,NOW(),NOW(),#{author})
+    </insert>
+
+
+    <update id="updateBrand" parameterType="com.wangyj.api.model.po.ShopBrand" >
+
+        update shop_brand set name=#{name},bandE=#{bandE},imgpath=#{imgpath},bandDesc=#{bandDesc},ord=#{ord},updateDate=NOW(),author=#{author} where id=#{id}
+
+    </update>
+</mapper>

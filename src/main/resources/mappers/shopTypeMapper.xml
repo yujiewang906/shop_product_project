@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wangyj.api.dao.ShopTypeDao">
+
+    <insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="com.wangyj.api.model.po.ShopType">
+
+      insert into  shop_type  (name,pid,createDate,updateDate,isDel,auther) values (#{name},#{pid},NOW(),NOW(),0,#{auther})
+
+    </insert>
+    
+    <update id="update" parameterType="com.wangyj.api.model.po.ShopType">
+        UPDATE shop_type SET   name = #{name},isDel=#{isDel},updateDate=NOW() where id = #{id}
+    </update>
+    
+</mapper>
