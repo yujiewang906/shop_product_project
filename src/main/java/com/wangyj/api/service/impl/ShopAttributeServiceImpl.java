@@ -30,4 +30,10 @@ public class ShopAttributeServiceImpl implements ShopAttributeService {
 
         return map;
     }
+
+    @Override
+    public void addAttribute(ShopAttribute shopAttribute) {
+
+        shopAttributeDao.addAttribute(shopAttribute);
+    }
 }

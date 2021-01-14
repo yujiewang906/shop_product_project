@@ -16,4 +16,10 @@
 
     </select>
     
+    <insert id="addAttribute" parameterType="com.wangyj.api.model.po.ShopAttribute">
+
+        insert into shop_attribute (name,color,nameCH,typeId,type,isSKU,isDel,createDate,updateDate,author)
+          value (#{name},#{color},#{nameCH},#{typeId},#{type},#{isSKU},#{isDel},NOW(),NOW(),#{author});
+
+    </insert>
 </mapper>

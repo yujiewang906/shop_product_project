@@ -15,5 +15,5 @@ public interface ShopAttributeDao {
     Integer  getCount(ShopParamsVo vo);
 
 
-
+    void addAttribute(ShopAttribute shopAttribute);
 }

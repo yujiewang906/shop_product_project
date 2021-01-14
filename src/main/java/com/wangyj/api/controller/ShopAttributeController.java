@@ -1,14 +1,12 @@
 package com.wangyj.api.controller;
 
 
+import com.wangyj.api.model.po.ShopAttribute;
 import com.wangyj.api.model.vo.ResultData;
 import com.wangyj.api.model.vo.ShopParamsVo;
 import com.wangyj.api.service.ShopAttributeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -35,6 +33,22 @@ public class ShopAttributeController {
         return ResultData.success(data);
     }
 
+    /*
+    * 路径：http://192.168.1.223:8080/api/attribute/addAttribute
+    * 参数：name,color,nameCH,typeId,type,isSKU,isDel,author
+    *
+    * 返回值：data,code,message
+    *请求方式：post
+    *
+    * */
+
+    @PostMapping("addAttribute")
+    public  ResultData  addAttribute(ShopAttribute shopAttribute){
+
+        shopAttributeService.addAttribute(shopAttribute);
+
+        return ResultData.success(null);
+    }
 
 
 
