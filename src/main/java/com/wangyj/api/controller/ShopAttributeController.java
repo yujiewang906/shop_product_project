@@ -51,6 +51,25 @@ public class ShopAttributeController {
     }
 
 
+    /*
+     * 路径：http://192.168.1.223:8080/api/attribute/updateAttribute
+     * 参数：id:必传  name,color,nameCH,typeId,type,isSKU,isDel,author
+     *
+     *返回值：data,code,message
+     *请求方式：post
+     *
+     * */
+    @PostMapping("updateAttribute")
+    public ResultData  updateAttribute(ShopAttribute shopAttribute){
+
+        if (shopAttribute.getId()==null){
+            return ResultData.error(500,"没有依赖id");
+        }
+        shopAttributeService.updateAttribute(shopAttribute);
+
+        return  ResultData.success(null);
+    }
+
 
 }
 

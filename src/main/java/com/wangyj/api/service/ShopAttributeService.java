@@ -9,9 +9,11 @@ public interface ShopAttributeService {
 
 
 
-         Map getData(ShopParamsVo vo);
+    Map getData(ShopParamsVo vo);
 
     void addAttribute(ShopAttribute shopAttribute);
 
+
+    void updateAttribute(ShopAttribute shopAttribute);
 
 }

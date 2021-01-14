@@ -22,4 +22,11 @@
           value (#{name},#{color},#{nameCH},#{typeId},#{type},#{isSKU},#{isDel},NOW(),NOW(),#{author});
 
     </insert>
+
+    <update id="updateAttribute" parameterType="com.wangyj.api.model.po.ShopAttribute">
+
+        update shop_attribute set name=#{name},color=#{color},nameCH=#{nameCH},typeId= #{typeId},type=#{type},isSKU=#{isSKU},isDel=#{isDel},updateDate=NOW(),author=#{author} where id=#{id}
+
+    </update>
+
 </mapper>

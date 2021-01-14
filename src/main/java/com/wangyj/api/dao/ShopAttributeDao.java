@@ -12,8 +12,16 @@ public interface ShopAttributeDao {
 
     List<ShopAttribute> getData(ShopParamsVo vo);
 
+
     Integer  getCount(ShopParamsVo vo);
 
 
     void addAttribute(ShopAttribute shopAttribute);
+
+
+
+    void updateAttribute(ShopAttribute shopAttribute);
+
+
+
 }
