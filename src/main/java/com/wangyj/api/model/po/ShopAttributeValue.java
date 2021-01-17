@@ -10,8 +10,18 @@ public class ShopAttributeValue {
 
     private  Integer  attrId;
 
+    private  Integer  isDel;
 
 
+
+
+    public Integer getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(Integer isDel) {
+        this.isDel = isDel;
+    }
 
     public Integer getId() {
         return id;

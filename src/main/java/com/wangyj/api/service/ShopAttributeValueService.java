@@ -14,4 +14,7 @@ public interface ShopAttributeValueService {
     void addAttributeValue(ShopAttributeValue value);
 
 
+    void updateAttributeValue(ShopAttributeValue value);
+
+
 }

@@ -35,4 +35,9 @@ public class ShopAttributeValueServiceImpl implements ShopAttributeValueService 
     public void addAttributeValue(ShopAttributeValue value) {
         shopAttributeValueDao.addAttributeValue(value);
     }
+
+    @Override
+    public void updateAttributeValue(ShopAttributeValue value) {
+        shopAttributeValueDao.updateAttributeValue(value);
+    }
 }

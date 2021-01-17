@@ -33,4 +33,11 @@ public class ShopAttributeValueController {
             return  ResultData.success(null);
     }
 
+    @PostMapping("updateAttributeValue")
+    public  ResultData  updateAttributeValue(ShopAttributeValue  value){
+
+        shopAttributeValueService.updateAttributeValue(value);
+
+        return  ResultData.success(null);
+    }
 }
