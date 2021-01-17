@@ -4,10 +4,14 @@ import com.wangyj.api.model.po.ShopBrand;
 import com.wangyj.api.model.vo.ResultData;
 import com.wangyj.api.model.vo.ShopParamsVo;
 import com.wangyj.api.service.ShopBrandService;
+import com.wangyj.api.utils.Oss_fileUpload_wangyj;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("api/brand/")
@@ -55,6 +59,16 @@ public class ShopBrandController {
         shopBrandService.deleteBrand(id);
 
         return  ResultData.success(null);
+    }
+    @RequestMapping("uploadFile")
+    public ResultData uploadFile(MultipartFile file) throws IOException {
+        //处理新名称
+        String originalFilename = file.getOriginalFilename();
+        //防止中文引起的错误
+        String newName= UUID.randomUUID().toString()+originalFilename.substring(originalFilename.lastIndexOf("."));
+        //存储路径
+        newName="imgs/"+newName;
+        return ResultData.success(Oss_fileUpload_wangyj.uploadFile(file.getInputStream(),newName));
     }
 
 }
