@@ -8,7 +8,7 @@
 
     <select id="queryData" resultType="com.wangyj.api.model.po.ShopBrand" parameterType="com.wangyj.api.model.vo.ShopParamsVo">
 
-        SELECT  *  FROM  shop_brand WHERE 1=1
+        SELECT  *  FROM  shop_brand WHERE 1=1 and isDel=0
         <if test="name != null and name != &quot;&quot;">
             and name = #{name}
         </if>
@@ -16,7 +16,7 @@
     </select>
 
     <select id="queryCountBrand" resultType="java.lang.Integer" parameterType="com.wangyj.api.model.vo.ShopParamsVo">
-        select count(*) from shop_brand where 1=1
+        select count(*) from shop_brand where 1=1 and isDel=0
         <if test="name != null and name != &quot;&quot;">
             and name = #{name}
         </if>

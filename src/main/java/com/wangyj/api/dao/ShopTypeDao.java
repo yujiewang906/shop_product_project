@@ -12,11 +12,11 @@ public interface ShopTypeDao {
 
 
 
-    @Select("select * from  shop_type")
+    @Select("select * from  shop_type where  isDel=0")
     public List<ShopType> getData();
 
 
-    @Select("select * from shop_type where isDel=0 and pid = #{pid}")
+    @Select("select * from shop_type where isDel=0 and pid = #{pid} and isDel=0")
     public List<ShopType> getDataByPid(Integer pid);
 
 

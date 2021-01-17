@@ -7,12 +7,12 @@
 
     <select id="getData" parameterType="com.wangyj.api.model.vo.ShopParamsVo" resultType="com.wangyj.api.model.po.ShopAttribute">
 
-        select * from shop_attribute where 1=1 limit ${(page-1)*currPage},#{currPage}
+        select * from shop_attribute where 1=1 and isDel=0 limit ${(page-1)*currPage},#{currPage}
 
     </select>
     <select id="getCount" parameterType="com.wangyj.api.model.vo.ShopParamsVo" resultType="int">
 
-        select  count(*) from shop_attribute where 1=1
+        select  count(*) from shop_attribute where 1=1 and isDel=0
 
     </select>
     
