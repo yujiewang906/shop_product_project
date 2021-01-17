@@ -20,7 +20,6 @@ public interface ShopAttributeDao {
     void addAttribute(ShopAttribute shopAttribute);
 
 
-
     void updateAttribute(ShopAttribute shopAttribute);
 
     @Delete("update shop_attribute set isDel=1 where id = #{id}")

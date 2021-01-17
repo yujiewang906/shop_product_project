@@ -1,13 +1,11 @@
 package com.wangyj.api.controller;
 
+import com.wangyj.api.model.po.ShopAttributeValue;
 import com.wangyj.api.model.vo.ResultData;
 import com.wangyj.api.model.vo.ShopParamsVo;
 import com.wangyj.api.service.ShopAttributeValueService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -25,6 +23,14 @@ public class ShopAttributeValueController {
         Map data = shopAttributeValueService.getData(vo);
 
         return  ResultData.success(data);
+    }
+
+    @PostMapping("addAttributeValue")
+    public  ResultData   addAttributeValue(ShopAttributeValue  value){
+
+        shopAttributeValueService.addAttributeValue(value);
+
+            return  ResultData.success(null);
     }
 
 }

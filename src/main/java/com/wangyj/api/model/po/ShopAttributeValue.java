@@ -6,7 +6,7 @@ public class ShopAttributeValue {
 
     private  String   name;
 
-    private  String  nameCh;
+    private  String  nameCH;
 
     private  Integer  attrId;
 
@@ -29,12 +29,12 @@ public class ShopAttributeValue {
         this.name = name;
     }
 
-    public String getNameCh() {
-        return nameCh;
+    public String getNameCH() {
+        return nameCH;
     }
 
-    public void setNameCh(String nameCh) {
-        this.nameCh = nameCh;
+    public void setNameCH(String nameCH) {
+        this.nameCH = nameCH;
     }
 
     public Integer getAttrId() {
