@@ -2,10 +2,7 @@ package com.wangyj.api.dao;
 
 import com.wangyj.api.model.po.ShopAttributeValue;
 import com.wangyj.api.model.vo.ShopParamsVo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -26,4 +23,7 @@ public interface ShopAttributeValueDao {
     @Update("update  shop_attribute_value  set name = #{name},nameCH=#{nameCH},attrId=#{attrId} where id = #{id}")
     void updateAttributeValue(ShopAttributeValue value);
 
+
+    @Delete("update shop_attribute_value set isDel = 1  where id = #{id}")
+    void deleteAttributeValue(Integer id);
 }

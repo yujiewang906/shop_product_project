@@ -40,4 +40,13 @@ public class ShopAttributeValueController {
 
         return  ResultData.success(null);
     }
+
+
+    @DeleteMapping("deleteAttributeValue")
+    public ResultData  deleteAttributeValue(Integer id){
+
+        shopAttributeValueService.deleteAttributeValue(id);
+        return ResultData.success(null);
+    }
+
 }

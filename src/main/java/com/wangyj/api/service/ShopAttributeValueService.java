@@ -17,4 +17,5 @@ public interface ShopAttributeValueService {
     void updateAttributeValue(ShopAttributeValue value);
 
 
+    void deleteAttributeValue(Integer id);
 }

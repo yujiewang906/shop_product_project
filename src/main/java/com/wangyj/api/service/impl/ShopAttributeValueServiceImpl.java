@@ -40,4 +40,9 @@ public class ShopAttributeValueServiceImpl implements ShopAttributeValueService 
     public void updateAttributeValue(ShopAttributeValue value) {
         shopAttributeValueDao.updateAttributeValue(value);
     }
+
+    @Override
+    public void deleteAttributeValue(Integer id) {
+        shopAttributeValueDao.deleteAttributeValue(id);
+    }
 }
