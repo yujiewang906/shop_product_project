@@ -36,4 +36,9 @@ public class ShopServiceImpl implements ShopService {
     public void addShop(Shop shop) {
         shopDao.addShop(shop);
     }
+
+    @Override
+    public void updateShop(Shop shop) {
+        shopDao.updateShop(shop);
+    }
 }

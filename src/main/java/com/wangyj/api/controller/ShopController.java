@@ -18,7 +18,16 @@ public class ShopController {
     @Autowired
     private ShopService shopService;
 
+    /*
+    * 路径   http://ip:port/api/shop/getData
 
+    get请求
+
+    参数  currPage  page
+
+    返回值   {"code": 200,"message": "success","data": {"data": [],"count":""}}
+
+    * */
     @GetMapping("getData")
     public ResultData  getData(ShopParamsVo vo){
 
@@ -34,7 +43,16 @@ public class ShopController {
         return  ResultData.success(data);
     }
 
+    /*
+       * 路径   http://ip:port/api/shop/addShop
 
+       post请求
+
+       参数  Shop对象
+
+       返回值   {"code": 200,"message": "success","data": {}}
+
+       * */
     @PostMapping("addShop")
     public  ResultData  addShop(Shop shop){
 
@@ -42,6 +60,25 @@ public class ShopController {
 
         return  ResultData.success("新增成功");
     }
+    /*
+           * 路径   http://ip:port/api/shop/updateShop
+
+           post请求
+
+           参数  Shop对象
+
+           返回值   {"code": 200,"message": "success","data": {}}
+
+           * */
+    @PostMapping("updateShop")
+    public  ResultData  updateShop(Shop shop){
+
+        shopService.updateShop(shop);
+
+        return  ResultData.success("修改成功");
+    }
+
+
 
 
 }

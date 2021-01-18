@@ -13,4 +13,5 @@ public interface ShopService {
 
   public   void addShop(Shop shop);
 
+    public  void updateShop(Shop shop);
 }

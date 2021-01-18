@@ -17,6 +17,15 @@ public class ShopAttributeValueController {
     @Autowired
     private ShopAttributeValueService shopAttributeValueService;
 
+
+    /*
+     * 路径：http://192.168.1.223:8080/api/attrValue/getData
+     * 参数：currPage, page
+     *
+     * 返回值：data,code,message
+     *请求方式：Get
+     *
+     * */
     @GetMapping("getData")
     public ResultData  getData(ShopParamsVo vo){
 
@@ -25,6 +34,14 @@ public class ShopAttributeValueController {
         return  ResultData.success(data);
     }
 
+    /*
+     * 路径：http://192.168.1.223:8080/api/attrValue/addAttributeValue
+     * 参数：shopAttributeValue对象
+     *
+     * 返回值：data,code,message
+     *请求方式：Post
+     *
+     * */
     @PostMapping("addAttributeValue")
     public  ResultData   addAttributeValue(ShopAttributeValue  value){
 
@@ -32,7 +49,14 @@ public class ShopAttributeValueController {
 
             return  ResultData.success(null);
     }
-
+    /*
+     * 路径：http://192.168.1.223:8080/api/attrValue/updateAttributeValue
+     * 参数：shopAttributeValue对象
+     *
+     * 返回值：data,code,message
+     *请求方式：Post
+     *
+     * */
     @PostMapping("updateAttributeValue")
     public  ResultData  updateAttributeValue(ShopAttributeValue  value){
 
@@ -41,7 +65,13 @@ public class ShopAttributeValueController {
         return  ResultData.success(null);
     }
 
-
+    /*
+     * 路径：http://192.168.1.223:8080/api/attrValue/deleteAttributeValue
+     * 参数：id 必传
+     * 返回值：data,code,message
+     *请求方式：Delete
+     *
+     * */
     @DeleteMapping("deleteAttributeValue")
     public ResultData  deleteAttributeValue(Integer id){
 
