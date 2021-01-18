@@ -9,9 +9,8 @@ import java.util.List;
 @Mapper
 public interface ShopAttributeValueDao {
 
-    @Select("SELECT  s.* from shop_attribute_value  " +
-            "s LEFT JOIN shop_attribute a ON s.attrId = a.id  " +
-            "where  s.attrId =#{id} and isDel = 0  limit ${(page-1)*currPage},#{currPage}")
+
+    @Select("select  * from shop_attribute_value  where  attrId =#{id}  and isDel = 0  limit ${(page-1)*currPage},#{currPage}")
     List<ShopAttributeValue> getData(ShopParamsVo vo);
 
     @Select("SELECT  count(*) from shop_attribute_value where attrId =#{id} and isDel=0")

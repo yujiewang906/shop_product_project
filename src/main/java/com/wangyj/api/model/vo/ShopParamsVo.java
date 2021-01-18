@@ -1,11 +1,10 @@
 package com.wangyj.api.model.vo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
 
 public class ShopParamsVo {
+
+    private  Integer  id;
 
     private  Integer  currPage;//每页显示数量
 
@@ -14,6 +13,14 @@ public class ShopParamsVo {
 
     private  String    name;  //品牌名
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getCurrPage() {
         return currPage;
