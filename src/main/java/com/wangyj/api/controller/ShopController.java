@@ -1,14 +1,12 @@
 package com.wangyj.api.controller;
 
 
+import com.wangyj.api.model.po.Shop;
 import com.wangyj.api.model.vo.ResultData;
 import com.wangyj.api.model.vo.ShopParamsVo;
 import com.wangyj.api.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -35,4 +33,15 @@ public class ShopController {
 
         return  ResultData.success(data);
     }
+
+
+    @PostMapping("addShop")
+    public  ResultData  addShop(Shop shop){
+
+        shopService.addShop(shop);
+
+        return  ResultData.success("新增成功");
+    }
+
+
 }

@@ -31,4 +31,9 @@ public class ShopServiceImpl implements ShopService {
 
         return map;
     }
+
+    @Override
+    public void addShop(Shop shop) {
+        shopDao.addShop(shop);
+    }
 }
