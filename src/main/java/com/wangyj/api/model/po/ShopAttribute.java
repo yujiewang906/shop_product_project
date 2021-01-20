@@ -12,7 +12,6 @@ public class ShopAttribute {
 
     private   String        name;
 
-    private   Integer       color;
 
     private   String        nameCH;
 
@@ -54,13 +53,6 @@ public class ShopAttribute {
         this.name = name;
     }
 
-    public Integer getColor() {
-        return color;
-    }
-
-    public void setColor(Integer color) {
-        this.color = color;
-    }
 
     public String getNameCH() {
         return nameCH;

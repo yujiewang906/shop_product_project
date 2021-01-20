@@ -47,4 +47,13 @@ public class ShopAttributeServiceImpl implements ShopAttributeService {
     public void deleteAttribute(Integer id) {
         shopAttributeDao.deleteAttribute(id);
     }
+
+    @Override
+    public Map getDataByPid(Integer pid) {
+        Map map = new HashMap();
+        List<ShopAttribute> dataByPid = shopAttributeDao.getDataByPid(pid);
+        map.put("data",dataByPid);
+        return map;
+
+    }
 }

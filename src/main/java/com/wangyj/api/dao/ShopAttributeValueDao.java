@@ -27,4 +27,7 @@ public interface ShopAttributeValueDao {
 
     @Delete("update shop_attribute_value set isDel = 1  where id = #{id}")
     void deleteAttributeValue(Integer id);
+
+    @Select("select * from shop_attribute_value where attrId = #{aid}")
+    List<ShopAttributeValue> queryDataByAid(Integer aid);
 }

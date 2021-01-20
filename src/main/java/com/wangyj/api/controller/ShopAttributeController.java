@@ -85,5 +85,14 @@ public class ShopAttributeController {
 
         return ResultData.success(null);
     }
+
+    @GetMapping("getDataByTypeId")
+    public  ResultData  getDataByTypeId(Integer pid){
+
+        Map dataByPid = shopAttributeService.getDataByPid(pid);
+
+        return ResultData.success(dataByPid);
+    }
+
 }
 

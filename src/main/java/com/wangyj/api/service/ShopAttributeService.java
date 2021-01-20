@@ -18,4 +18,6 @@ public interface ShopAttributeService {
 
     void deleteAttribute(Integer id);
 
+    Map  getDataByPid(Integer pid);
+
 }

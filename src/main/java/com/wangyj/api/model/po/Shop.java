@@ -21,6 +21,8 @@ public class Shop {
 
     private  Integer            stocks;
 
+    private  String             imgPath;
+
     private  Integer            sortNum;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -69,6 +71,14 @@ public class Shop {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     public Integer getBrandId() {

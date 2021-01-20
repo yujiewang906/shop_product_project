@@ -18,4 +18,6 @@ public interface ShopAttributeValueService {
 
 
     void deleteAttributeValue(Integer id);
+
+    Map queryDataByAid(Integer aid);
 }

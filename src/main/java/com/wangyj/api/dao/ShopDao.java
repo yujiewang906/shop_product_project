@@ -19,11 +19,11 @@ public interface ShopDao {
     public   Integer   getShopCount(ShopParamsVo vo);
 
 
-    @Insert("insert into t_shop (name,title,brandId,productdecs,price,stocks,sortNum,createDate,updateDate,author,isDel) value " +
-            "(#{name},#{title},#{brandId},#{productdecs},#{price},#{stocks},#{sortNum},NOW(),NOW(),#{author},#{isDel})")
+    @Insert("insert into t_shop (name,title,brandId,productdecs,imgPath,price,stocks,sortNum,createDate,updateDate,author,isDel) value " +
+            "(#{name},#{title},#{brandId},#{productdecs},#{imgPath},#{price},#{stocks},#{sortNum},NOW(),NOW(),#{author},#{isDel})")
     public   void addShop(Shop shop);
 
-    @Update("update t_shop set name = #{name},title=#{title},brandId=#{brandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},updateDate=NOW(),author = #{author},isDel = #{isDel} where id=#{id}")
+    @Update("update t_shop set name = #{name},title=#{title},brandId=#{brandId},imgPath=#{imgPath},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},updateDate=NOW(),author = #{author},isDel = #{isDel} where id=#{id}")
     public  void updateShop(Shop shop);
 
 }

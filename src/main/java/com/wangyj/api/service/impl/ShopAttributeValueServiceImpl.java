@@ -45,4 +45,12 @@ public class ShopAttributeValueServiceImpl implements ShopAttributeValueService 
     public void deleteAttributeValue(Integer id) {
         shopAttributeValueDao.deleteAttributeValue(id);
     }
+
+    @Override
+    public Map queryDataByAid(Integer aid) {
+        Map  map = new HashMap();
+        List<ShopAttributeValue> data = shopAttributeValueDao.queryDataByAid(aid);
+        map.put("data",data);
+        return map;
+    }
 }

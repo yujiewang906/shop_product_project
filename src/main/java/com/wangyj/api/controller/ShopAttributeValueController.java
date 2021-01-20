@@ -79,4 +79,11 @@ public class ShopAttributeValueController {
         return ResultData.success(null);
     }
 
+
+    @GetMapping("queryDataByAid")
+    public  ResultData  queryDataByAid(Integer aid){
+        Map map = shopAttributeValueService.queryDataByAid(aid);
+        return  ResultData.success(map);
+    }
+
 }
