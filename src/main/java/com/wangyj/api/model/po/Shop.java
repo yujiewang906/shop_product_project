@@ -17,7 +17,7 @@ public class Shop {
 
     private  String             productdecs;
 
-    private  Integer            price;
+    private  Double            price;
 
     private  Integer            stocks;
 
@@ -97,11 +97,11 @@ public class Shop {
         this.productdecs = productdecs;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

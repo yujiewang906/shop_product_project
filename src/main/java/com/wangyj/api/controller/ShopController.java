@@ -54,9 +54,9 @@ public class ShopController {
 
        * */
     @PostMapping("addShop")
-    public  ResultData  addShop(Shop shop){
+    public  ResultData  addShop(Shop shop,String attr,String sku){
 
-        shopService.addShop(shop);
+        shopService.addShop(shop,attr,sku);
 
         return  ResultData.success("新增成功");
     }

@@ -11,7 +11,7 @@ public interface ShopService {
   public   Map getData(ShopParamsVo vo);
 
 
-  public   void addShop(Shop shop);
+  public   void addShop(Shop shop,String attr,String sku);
 
     public  void updateShop(Shop shop);
 }
