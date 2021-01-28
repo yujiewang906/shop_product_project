@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface ShopDao {
 
-    @Select("select * from t_shop where 1=1  limit ${(page-1)*currPage},#{currPage}")
+    @Select("select * from t_shop where 1=1  order by id desc limit ${(page-1)*currPage},#{currPage} ")
     public   List<Shop> getData(ShopParamsVo vo);
 
     @Select("select count(*) from t_shop ")

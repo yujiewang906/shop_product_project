@@ -11,6 +11,7 @@ import com.wangyj.api.model.po.ShopAttribute;
 import com.wangyj.api.model.vo.ShopParamsVo;
 import com.wangyj.api.service.ShopService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -42,6 +43,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
+    @Transactional  //加上事务   什么是事务
     public void addShop(Shop shop,String attr,String sku) {
         //添加商品
         shopDao.addShop(shop);
@@ -76,9 +78,7 @@ public class ShopServiceImpl implements ShopService {
             arrlist.add(productAttrData);
 
         }
-
         shopAttrSkuDataDao.adds(arrlist);
-
     }
 
     @Override
