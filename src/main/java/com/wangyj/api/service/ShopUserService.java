@@ -8,5 +8,5 @@ public interface ShopUserService {
     void addUser(ShopUser user);
 
 
-
+    ShopUser getDataByName(String name);
 }

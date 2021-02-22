@@ -19,4 +19,12 @@ public class ShopUserServiceImpl implements ShopUserService {
     public void addUser(ShopUser user) {
         shopUserDao.addUser(user);
     }
+
+    @Override
+    public ShopUser getDataByName(String name) {
+
+        ShopUser user = shopUserDao.getDataByName(name);
+
+        return user;
+    }
 }
